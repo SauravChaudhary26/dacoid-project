@@ -3,14 +3,17 @@ import { Typography, Box, List, ListItem, ListItemText } from "@mui/material";
 import { getAttempts } from "../utils/indexedDB";
 
 const History = () => {
+   //maintain the state of history
    const [history, setHistory] = useState([]);
 
+   //get the previous attempts data from indexedDb database
    useEffect(() => {
       getAttempts().then((data) => {
          setHistory(data);
       });
    }, []);
 
+   //Component to render when user try the quiz for the first time
    if (history.length === 0) {
       return (
          <Box
@@ -26,6 +29,7 @@ const History = () => {
       );
    }
 
+   //material ui list to display all the previous attemps data
    return (
       <Box
          sx={{

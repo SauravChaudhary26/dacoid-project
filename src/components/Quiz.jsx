@@ -44,6 +44,7 @@ function Quiz() {
       setIsTimerActive(true);
    };
 
+   //Initial page of the site before the start of the quiz
    if (!hasStarted) {
       return (
          <Box
@@ -89,6 +90,7 @@ function Quiz() {
       );
    }
 
+   //Page which renders after the questions are exhausted
    if (quizFinished) {
       return (
          <Box sx={{ p: 2, textAlign: "center", width: "100vw" }}>
@@ -104,6 +106,7 @@ function Quiz() {
       );
    }
 
+   //submission of quiz (mcq) and pausing the timer
    const handleMCQSelect = (optionKey) => {
       if (selectedOption !== null) return;
       setSelectedOption(optionKey);
@@ -116,6 +119,7 @@ function Quiz() {
       }
    };
 
+   //submission of integer and pausing of the timer
    const handleIntegerSubmit = () => {
       if (integerAnswer === "") return;
       setIsTimerActive(false);
@@ -128,6 +132,7 @@ function Quiz() {
       }
    };
 
+   //handling of the next question
    const handleNextQuestion = () => {
       let attempt;
       if (question.type === "mcq") {
@@ -165,6 +170,7 @@ function Quiz() {
       }
    };
 
+   //function to stop the timer on timeout
    const handleTimeOut = () => {
       if (
          (question.type === "mcq" && !selectedOption) ||
@@ -176,6 +182,7 @@ function Quiz() {
       }
    };
 
+   //main quiz question rendering component to render either the mcq or integer based format based on the current question available
    return (
       <Box
          sx={{
