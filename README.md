@@ -1,5 +1,7 @@
 # 📝 Dacoid Project
 
+## Deployment link [https://dacoid-demo.netlify.app/](https://dacoid-demo.netlify.app/)
+
 ## 📌 Project Overview
 
 This **Interactive Quiz Platform** is a fully client-side quiz application built using **React with Vite** and **Material UI**. The app provides multiple-choice and integer-type questions, instant feedback, progress tracking, and the ability to reattempt quizzes.
